@@ -5,9 +5,6 @@ from subprocess import call
 # create virtualenv
 call(['virtualenv', 'env'])
 
-# activate virtualenv
-call(['./env/Scripts/activate.bat'])
-
 # install scm package
 call(['git', 'clone', 'https://andrusseiman@bitbucket.org/ccfft/scm.git', './libs/scm'])
 os.chdir('./libs/scm/src/scm/')
@@ -21,9 +18,6 @@ call(['ipython', 'kernel', 'install', '--user', '--name="Python [{{cookiecutter.
 
 # install requirements
 call(['./env/Scripts/pip', 'install', '-r', 'requirements.txt'])
-
-# deactivate virtualenv
-call(['./env/Scripts/deactivate.bat'])
 
 # exits with status 1 to indicate failure
 sys.exit(0)
